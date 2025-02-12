@@ -64,4 +64,67 @@
   --color-danger-800: #b8232a;
   --color-danger-900: #7c1419;
   --color-danger-950: #45070a;
+
+}
+
+.underline-animation {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: width 0.3s ease-out, left 0.3s ease-out;
+}
+
+/* Au survol, on déclenche l'animation de soulignement */
+.underline-animation:hover::after {
+  animation: underline-balance 1.5s infinite ease-in-out;
+  width: 100%;
+}
+
+/* Quand le survol s'arrête, on fait disparaître progressivement la ligne */
+.underline-animation:not(:hover)::after {
+  animation: underline-hide 0.3s forwards;
+}
+
+@keyframes underline-balance {
+  0% {
+    width: 0;
+    left: 0;
+  }
+
+  50% {
+    width: 100%;
+    left: 0;
+  }
+
+  75% {
+    width: 0;
+    left: 100%;
+  }
+
+  100% {
+    width: 0;
+    left: 0;
+  }
+}
+
+@keyframes underline-hide {
+  from {
+    width: 100%;
+    left: 0;
+  }
+
+  to {
+    width: 0;
+    left: 100%;
+  }
 }
