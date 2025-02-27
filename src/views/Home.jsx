@@ -1,5 +1,8 @@
 import Header from '../components/Header';
 import CardEmoji from '../components/CardEmoji';
+import Card from '../components/Card';
+import ListPourcent from '../components/ListPourcent';
+import { ReactIcon, SpringBootIcon } from '../assets';
 
 const Home = () => {
     return (
@@ -24,14 +27,14 @@ const Home = () => {
                         <div></div>
                         <CardEmoji title={"Impact"} description={"Je conçois des solutions uniques, adaptées aux besoins des clients, pour créer des expériences inédites."} emoji={"📈"} />
                     </div>
-                    <h2 className='text-3xl text-center'>Expertises et Savoir-Faire</h2>
-                    
 
-                    {/*<div className={"grid grid-cols-2 gap-8 min-w-fit"}>
-                            <Card title={"React"} description={"Le framework React est essentiel pour le développement front-end"} Icon={ReactIcon} />
-                            <Card title={"SpringBoot"} description={"Le framework Spring Boot est incontournable pour le développement back-end"} Icon={SpringBootIcon} />
-                        </div>*/}
                 </div>
+                <h2 className='text-3xl text-center'>Compétence technique Front-end</h2>
+                <ListPourcent ths={["test", "test", "test"]} data={[["test", "test", 80], ["test", "test", 43], ["test", "test", 24]]}/>
+
+                {/*<div className={"grid grid-cols-2 gap-8 min-w-fit"}>
+                            <Card title={"React"} description={"Le framework React est essentiel pour le développement front-end"} Icon={ReactIcon} />
+                        </div>*/}
             </div>
         </div>
     )
